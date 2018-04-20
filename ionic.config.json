@@ -1,0 +1,8 @@
+{
+  "name": "duckflix",
+  "app_id": "88ac2636",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
