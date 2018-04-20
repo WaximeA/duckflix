@@ -13,17 +13,37 @@
 </ion-header>
 
 
-<ion-content padding>
-    <h2>Choose a username</h2>
-    <br>
-    <div id="username" class="txt" contenteditable="true">
-        User-442
-    </div>
-    <br>
-    <div padding class="landing-btn">
-        <button ion-button full icon-right color="primary" (click)="gotoHome()">
-            Log in to access your series
-            <ion-icon name="ios-fastforward"></ion-icon>
-        </button>
-    </div>
+<ion-content>
+
+
+    <!--Sources: https://github.com/oktadeveloper/okta-ionic-auth-example/tree/master/src/pages/login-->
+
+    <form #loginForm="ngForm" autocomplete="off">
+        <ion-row>
+            <ion-col>
+                <ion-list inset>
+                    <ion-item>
+                        <ion-input placeholder="Email" name="username" id="loginField"
+                                   type="text" required [(ngModel)]="username" #email></ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-input placeholder="Password" name="password" id="passwordField"
+                                   type="password" required [(ngModel)]="password"></ion-input>
+                    </ion-item>
+                </ion-list>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <div *ngIf="error" class="alert alert-danger">{{ error }}</div>
+                <!--<button ion-button class="submit-btn" full type="submit"-->
+                        <!--[disabled]="!loginForm.form.valid">Login-->
+                <!--</button>-->
+                    <button ion-button full icon-right color="primary" (click)="gotoHome()" [disabled]="!loginForm.form.valid">
+                        Log in
+                        <ion-icon name="md-checkmark-circle-outline"></ion-icon>
+                    </button>
+            </ion-col>
+        </ion-row>
+    </form>
 </ion-content>

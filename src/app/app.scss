@@ -1,6 +1,5 @@
 // http://ionicframework.com/docs/theming/
 
-
 // App Global Sass
 // --------------------------------------------------
 // Put style rules here that you want to apply globally. These
@@ -18,4 +17,20 @@
 ::-webkit-scrollbar,
 *::-webkit-scrollbar {
     display: none;
+}
+
+#iphone-frame .statusbar {
+    -webkit-filter: invert(100%);
+}
+
+.content-ios {
+    background: #0a0a0a;
+}
+
+.toolbar-title-ios {
+    color: #fff;
+}
+.tabs-ios .tabbar,
+ion-navbar .toolbar-background {
+    background: #1c1c1c;
 }
