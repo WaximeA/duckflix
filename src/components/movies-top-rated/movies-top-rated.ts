@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { ModalController } from 'ionic-angular';
+import { ShowMoviePage } from '../../pages/show-movie/show-movie';
 
 const apiUrl='https://api.themoviedb.org';
 
@@ -19,7 +21,7 @@ export class MoviesTopRatedComponent {
   number: any = 1;
   movies: any = [];
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, public modalCtrl: ModalController) {
     // Get content with Http Get request
     this.fetchAPI();
     this.pageNumber = this.number;
@@ -55,4 +57,8 @@ export class MoviesTopRatedComponent {
       });
   }
 
+  openModal(movieId){
+    let modal = this.modalCtrl.create(ShowMoviePage, movieId);
+    modal.present();
+  }
 }
