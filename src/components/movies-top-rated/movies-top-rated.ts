@@ -15,11 +15,39 @@ const apiUrl='https://api.themoviedb.org';
 })
 export class MoviesTopRatedComponent {
 
+  pageNumber: any;
+  number: any = 1;
   movies: any = [];
 
   constructor(private http: HttpClient) {
     // Get content with Http Get request
-    this.http.get(`${apiUrl}/3/movie/top_rated?api_key=e47f7187bfd94a3b12ce8ca4ae282342&language=en-US&page=1`).subscribe(
+    this.fetchAPI();
+    this.pageNumber = this.number;
+  }
+
+  paginatePrevious() {
+    if  (this.number > 1){
+      this.number = this.number-1;
+      this.pageNumber = this.number;
+      this.fetchAPI()
+    }
+  }
+
+  paginateNext() {
+    this.number = this.number+1;
+    this.pageNumber = this.number;
+    this.fetchAPI()
+  }
+
+  isFirstPage(){
+    if (this.number < 2){
+      return true;
+    }
+    return false;
+  }
+
+  fetchAPI() {
+    this.http.get(`${apiUrl}/3/movie/top_rated?api_key=e47f7187bfd94a3b12ce8ca4ae282342&language=en-US&page=${this.number}`).subscribe(
       data => {
         this.movies = data['results'];
       }, err => {
