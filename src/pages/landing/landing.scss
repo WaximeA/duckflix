@@ -1,0 +1,36 @@
+//.scroll-content{
+//    overflow: hidden;
+//}
+page-landing {
+    .landing-icon{
+        position: fixed;
+        top: 44%;
+        left: calc(50% - 131px);
+        width: auto;
+        height: auto;
+        z-index: -100;
+        margin: 0 !important;
+        //transform: translateX(-50%);
+        ion-img{
+            background: none;
+        }
+    }
+    video {
+        pointer-events: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        z-index: -100;
+        transform: translateX(-50%) translateY(-50%);
+    }
+    .landing-btn{
+        position: absolute;
+        top: 55%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}

@@ -4,6 +4,8 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { ComponentsModule } from '../components/components.module';
 
+import { LandingPage } from '../pages/landing/landing';
+import { LoginPage } from '../pages/login/login';
 import { HomePage } from '../pages/home/home';
 import { TopPage } from '../pages/top/top';
 import { WatchPage } from '../pages/watch/watch';
@@ -17,6 +19,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 @NgModule({
   declarations: [
     MyApp,
+    LandingPage,
+    LoginPage,
     HomePage,
     TopPage,
     WatchPage,
@@ -32,6 +36,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
+    LandingPage,
+    LoginPage,
     HomePage,
     TopPage,
     WatchPage,
