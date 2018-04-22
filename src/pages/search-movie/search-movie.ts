@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
+import { HttpClient } from '@angular/common/http';
+
+const apiUrl='https://api.themoviedb.org';
 
 /**
  * Generated class for the SearchMoviePage page.
@@ -15,11 +18,34 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class SearchMoviePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  research: any = [];
+  event: any;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController, private http: HttpClient) {
+    this.fetchAPI(event);
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad SearchMoviePage');
+  fetchAPI(event) {
+    let val = event.target.value;
+
+    this.http.get(`${apiUrl}/3/search/movie?api_key=e47f7187bfd94a3b12ce8ca4ae282342&query=${val}&page=1`).subscribe(
+      data => {
+        this.research = data['results'];
+      }, err => {
+        console.log("Une erreur s'est produite.");
+      });
+
+    // if the value is an empty string don't filter the items
+    if (val && val.trim() != '') {
+      return this.research;
+    } else {
+      this.research = [];
+      return this.research;
+    }
+  }
+
+  dismiss() {
+    this.viewCtrl.dismiss();
   }
 
 }

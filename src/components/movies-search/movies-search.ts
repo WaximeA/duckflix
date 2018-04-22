@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { SearchMoviePage } from "../../pages/search-movie/search-movie";
+import { ModalController } from "ionic-angular";
 
 /**
  * Generated class for the MoviesSearchComponent component.
@@ -12,11 +14,11 @@ import { Component } from '@angular/core';
 })
 export class MoviesSearchComponent {
 
-  text: string;
+  constructor(public modalCtrl: ModalController) {}
 
-  constructor() {
-    console.log('Hello MoviesSearchComponent Component');
-    this.text = 'Hello World';
+  openModal(){
+    let modal = this.modalCtrl.create(SearchMoviePage);
+    modal.present();
   }
 
 }
