@@ -11,6 +11,7 @@ import { TopPage } from '../pages/top/top';
 import { WatchPage } from '../pages/watch/watch';
 import { ProfilePage } from '../pages/profile/profile';
 import { ShowMoviePage } from '../pages/show-movie/show-movie';
+import { SearchMoviePage } from '../pages/search-movie/search-movie';
 import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -26,6 +27,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     WatchPage,
     ProfilePage,
     ShowMoviePage,
+    SearchMoviePage,
     TabsPage
   ],
   imports: [
@@ -43,6 +45,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     WatchPage,
     ProfilePage,
     ShowMoviePage,
+    SearchMoviePage,
     TabsPage
   ],
   providers: [
