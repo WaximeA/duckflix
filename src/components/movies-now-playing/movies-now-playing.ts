@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { ModalController } from "ionic-angular";
+import { ShowMoviePage } from "../../pages/show-movie/show-movie";
 
 const apiUrl='https://api.themoviedb.org';
 
@@ -15,16 +17,49 @@ const apiUrl='https://api.themoviedb.org';
 })
 export class MoviesNowPlayingComponent {
 
+  pageNumber: any;
+  number: any = 1;
   movies: any = [];
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, public modalCtrl: ModalController) {
     // Get content with Http Get request
-    this.http.get(`${apiUrl}/3/movie/now_playing?api_key=e47f7187bfd94a3b12ce8ca4ae282342&language=en-US&page=1`).subscribe(
+    this.fetchAPI();
+    this.pageNumber = this.number;
+  }
+
+  paginatePrevious() {
+    if  (this.number > 1){
+      this.number = this.number-1;
+      this.pageNumber = this.number;
+      this.fetchAPI()
+    }
+  }
+
+  paginateNext() {
+    this.number = this.number+1;
+    this.pageNumber = this.number;
+    this.fetchAPI()
+  }
+
+  isFirstPage(){
+    if (this.number < 2){
+      return true;
+    }
+    return false;
+  }
+
+  fetchAPI() {
+    this.http.get(`${apiUrl}/3/movie/now_playing?api_key=e47f7187bfd94a3b12ce8ca4ae282342&language=en-US&page=${this.number}`).subscribe(
       data => {
         this.movies = data['results'];
       }, err => {
         console.log("Une erreur s'est produite.");
       });
+  }
+
+  openModal(movieId){
+    let modal = this.modalCtrl.create(ShowMoviePage, movieId);
+    modal.present();
   }
 
 }

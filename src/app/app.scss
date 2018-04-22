@@ -31,6 +31,11 @@
     color: #fff;
 }
 .tabs-ios .tabbar,
-ion-navbar .toolbar-background {
+ion-navbar, ion-header .toolbar-background {
     background: #1c1c1c;
+}
+
+.custom-disabeled {
+  opacity: 0.4;
+  cursor: not-allowed;
 }
