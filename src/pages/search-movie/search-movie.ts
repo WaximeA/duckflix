@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
+import { IonicPage, ModalController, NavController, NavParams, ViewController } from 'ionic-angular';
 import { HttpClient } from '@angular/common/http';
+import { ShowMoviePage } from "../show-movie/show-movie";
 
 const apiUrl='https://api.themoviedb.org';
 
@@ -21,7 +22,7 @@ export class SearchMoviePage {
   research: any = [];
   event: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController, private http: HttpClient) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController, private http: HttpClient,  public modalCtrl: ModalController) {
     this.fetchAPI(event);
   }
 
@@ -42,6 +43,11 @@ export class SearchMoviePage {
       this.research = [];
       return this.research;
     }
+  }
+
+  openModal(movieId){
+    let modal = this.modalCtrl.create(ShowMoviePage, movieId);
+    modal.present();
   }
 
   dismiss() {
