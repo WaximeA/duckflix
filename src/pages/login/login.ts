@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { LoadingController } from 'ionic-angular';
-// import { Storage } from '@ionic/storage';
-// private storage: Storage
+import { Storage } from '@ionic/storage';
 import { TabsPage } from '../tabs/tabs';
 
 
@@ -20,17 +19,13 @@ import { TabsPage } from '../tabs/tabs';
 })
 export class LoginPage {
 
-  private dataArray: any[];
-  private users = {
-    name: '',
-    email: ''
-  };
-  eventName: any;
+  username: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public loadingCtrl: LoadingController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public loadingCtrl: LoadingController, public storage: Storage) {
   }
 
-  postData() {
+  continueNext() {
+    this.storage.set('username', this.username);
     let loader = this.loadingCtrl.create({
       content: "Please wait...",
       duration: 3000

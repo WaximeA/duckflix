@@ -15,37 +15,28 @@
     <ion-grid>
         <ion-row>
             <ion-col col-12>
-                <form #myForm="ngForm" (ngSubmit)="postData()">
-                    <br>
-                    <ion-item>
-                        <ion-label floating>Name</ion-label>
-                        <ion-input (ionInput)="toto($eventName)" type="text" [(ngModel)]="users.name" id="name" name="name" required #name="ngModel"></ion-input>
-                    </ion-item>
-                    <span *ngIf="name.errors">
-                        <span [hidden]="!name.errors.required">
-                            <ion-label style="color: red; margin-left: 16px;"> Name is required </ion-label>
-                        </span>
-                    </span>
-                    <br>
-                    <ion-item>
-                        <ion-label floating>Email</ion-label>
-                        <ion-input type="email" id="email" [(ngModel)]="users.email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required #email="ngModel"></ion-input>
-                    </ion-item>
-                    <span *ngIf="email.errors">
-                        <span [hidden]="!email.errors.required">
-                            <ion-label style="color: red; margin-left: 16px;"> Email is required </ion-label>
-                        </span>
-                        <span [hidden]="!email.errors.pattern">
-                            <ion-label style="color: red; margin-left: 16px;"> Please enter a valid email </ion-label>
-                        </span>
-                    </span>
-                    <br>
-                    <div padding>
-                        <button [disabled]="!myForm.form.valid" type="submit" ion-button block color="duckcoin">
-                            Log in
-                            <ion-icon name="md-checkmark-circle-outline"></ion-icon>
-                        </button>
-                    </div>
+                <form #loginForm="ngForm" autocomplete="off">
+                    <ion-row>
+                        <ion-col>
+                            <ion-list inset>
+                                <ion-item>
+                                    <ion-input placeholder="Username" name="username" id="username" type="text" required [(ngModel)]="username"></ion-input>
+                                </ion-item>
+                                <ion-item>
+                                    <ion-input placeholder="Password" name="password" id="passwordField" type="password" required [(ngModel)]="password"></ion-input>
+                                </ion-item>
+                            </ion-list>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row>
+                        <ion-col>
+                            <div *ngIf="error" class="alert alert-danger">{{ error }}</div>
+                            <button ion-button full icon-right color="primary" (click)="continueNext()" [disabled]="!loginForm.form.valid">
+                                Log in
+                                <ion-icon name="md-checkmark-circle-outline"></ion-icon>
+                            </button>
+                        </ion-col>
+                    </ion-row>
                 </form>
             </ion-col>
         </ion-row>
