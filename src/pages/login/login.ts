@@ -26,6 +26,7 @@ export class LoginPage {
 
   continueNext() {
     this.storage.set('username', this.username);
+    this.storage.set('isConnected', 'true');
     let loader = this.loadingCtrl.create({
       content: "Please wait...",
       duration: 3000
