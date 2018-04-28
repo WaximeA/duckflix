@@ -45,13 +45,30 @@ export class ShowMoviePage {
   }
 
   addMovie(position: string, movieId, movieTitle) {
-    this.addedMovies.push(this.movieId);
+    this.addedMovies.push(movieId);
     this.storage.set('addedMoviesStorage', this.addedMovies);
     console.log('added movies : '+this.addedMovies);
 
     // display success message toast
     let toast = this.toastCtrl.create({
-      message: 'You successfully add "'+ movieTitle +'" to your watch section',
+      message: 'You successfully ADD "'+ movieTitle +'" to your watch section',
+      duration: 2500,
+      position: position
+    });
+
+    toast.present(toast);
+  }
+
+  removeMovie(position: string, movieId, movieTitle){
+    let movieIndex = this.addedMovies.indexOf(movieId);
+    this.addedMovies.splice(movieIndex, movieIndex+1);
+    this.storage.set('addedMoviesStorage', this.addedMovies);
+    console.log(this.addedMovies);
+    console.log(movieIndex);
+
+    // display success message toast
+    let toast = this.toastCtrl.create({
+      message: 'You successfully REMOVE "'+ movieTitle +'" to your watch section',
       duration: 2500,
       position: position
     });
@@ -66,12 +83,11 @@ export class ShowMoviePage {
   }
 
   isMovieAdded(movieId){
-    return true;
+    if (this.addedMovies.indexOf(movieId) > -1) {
+      return true;
+    }
+    return false;
   }
-
-  // removeMovie(movieId){
-  //   this.getAddedMovies().
-  // }
 
   dismiss() {
     this.viewCtrl.dismiss();

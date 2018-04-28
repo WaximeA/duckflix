@@ -17,13 +17,12 @@
 
         </ion-buttons>
         <ion-buttons end>
-            <!--*ngIf="isMovieAdded(movie.id)"-->
-           <button ion-button block (click)="addMovie('top', movie.id, movie.title)">
-               <ion-icon name="add-circle"></ion-icon>
-           </button>
-            <button ion-button block>
-                <ion-icon name="heart"></ion-icon>
-            </button>
+                <button ion-button block (click)="addMovie('top', movie.id, movie.title)" *ngIf="!isMovieAdded(movie.id)">
+                    <ion-icon name="add-circle"></ion-icon>
+                </button>
+                <button ion-button block (click)="removeMovie('top', movie.id, movie.title)" *ngIf="isMovieAdded(movie.id)">
+                    <ion-icon name="remove-circle"></ion-icon>
+                </button>
         </ion-buttons>
     </ion-toolbar>
 </ion-header>
