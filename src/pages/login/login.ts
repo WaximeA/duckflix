@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { LoadingController } from 'ionic-angular';
+import { Storage } from '@ionic/storage';
 import { TabsPage } from '../tabs/tabs';
 
 
@@ -18,15 +19,19 @@ import { TabsPage } from '../tabs/tabs';
 })
 export class LoginPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  username: any;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public loadingCtrl: LoadingController, public storage: Storage) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad LoginPage');
+  continueNext() {
+    this.storage.set('username', this.username);
+    this.storage.set('isConnected', 'true');
+    let loader = this.loadingCtrl.create({
+      content: "Please wait...",
+      duration: 3000
+    });
+    loader.present();
+    this.navCtrl.push(TabsPage);
   }
-    gotoHome() {
-        this.navCtrl.push(TabsPage, {
-            un_parametre: 'Je suis un paramètre'
-        });
-    }
 }
