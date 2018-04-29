@@ -19,8 +19,14 @@
 </ion-header>
 
 
-<ion-content padding>
-    <div class="video-container">
-        <iframe src="https://www.youtube.com/embed/sAOzrChqmd0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-    </div>
+<ion-content padding [ngStyle]="{'color':'white'}">
+    <ion-grid>
+        <ion-row text-center>
+            <ion-col col-4 *ngFor="let video of videos">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/{{ video.key }}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
 </ion-content>
