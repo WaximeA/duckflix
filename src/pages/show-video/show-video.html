@@ -22,9 +22,10 @@
 <ion-content padding [ngStyle]="{'color':'white'}">
     <ion-grid>
         <ion-row text-center>
-            <ion-col col-4 *ngFor="let video of videos">
+            <ion-col col-12 *ngFor="let video of videos">
                 <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/{{ video.key }}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    <h4>{{ video.name }}</h4>
+                    <iframe [src]="baseUrl + video.key | cleanUrl" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                 </div>
             </ion-col>
         </ion-row>
