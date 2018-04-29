@@ -1,0 +1,10 @@
+<div>
+    <ion-grid>
+        <ion-row text-center>
+            <ion-col col-4 *ngFor="let movie of movies">
+                {{movie.id}}
+                <img src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/{{ movie.poster_path }}" alt="">
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</div>
