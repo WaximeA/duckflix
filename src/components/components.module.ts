@@ -6,6 +6,7 @@ import { MoviesNowPlayingComponent } from './movies-now-playing/movies-now-playi
 import { MoviesTopRatedComponent } from './movies-top-rated/movies-top-rated';
 import { MoviesSearchComponent } from './movies-search/movies-search';
 import { MoviesAddedComponent } from './movies-added/movies-added';
+import { DuckflixHeaderComponent } from './duckflix-header/duckflix-header';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { MoviesAddedComponent } from './movies-added/movies-added';
     MoviesTopRatedComponent,
     MoviesSearchComponent,
     MoviesAddedComponent
+    DuckflixHeaderComponent
   ],
   imports: [
     IonicModule, HttpClientModule
@@ -22,6 +24,7 @@ import { MoviesAddedComponent } from './movies-added/movies-added';
     MoviesTopRatedComponent,
     MoviesSearchComponent,
     MoviesAddedComponent
+    DuckflixHeaderComponent
   ]
 })
 
