@@ -12,8 +12,12 @@ import { TopPage } from '../pages/top/top';
 import { WatchPage } from '../pages/watch/watch';
 import { ProfilePage } from '../pages/profile/profile';
 import { ShowMoviePage } from '../pages/show-movie/show-movie';
+import { ShowVideoPage } from '../pages/show-video/show-video';
 import { SearchMoviePage } from '../pages/search-movie/search-movie';
 import { TabsPage } from '../pages/tabs/tabs';
+
+import { CleanUrlPipe } from "../pipes/clean-url/clean-url";
+
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -28,8 +32,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     WatchPage,
     ProfilePage,
     ShowMoviePage,
+    ShowVideoPage,
     SearchMoviePage,
-    TabsPage
+    TabsPage,
+    CleanUrlPipe
   ],
   imports: [
     BrowserModule,
@@ -50,6 +56,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     WatchPage,
     ProfilePage,
     ShowMoviePage,
+    ShowVideoPage,
     SearchMoviePage,
     TabsPage
   ],

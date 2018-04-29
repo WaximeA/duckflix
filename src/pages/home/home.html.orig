@@ -9,9 +9,13 @@
     <duckflix-header></duckflix-header>
     <ion-grid>
         <ion-row text-center>
+<<<<<<< HEAD
+            <ion-col color="light" col-12>
+                <h3>Recommended for you</h3>
+=======
             <ion-col col-12>
                 <h3 [ngStyle]="{'color':'white'}">Welcome {{username}}</h3>
-                <h3>Recommended for you</h3>
+>>>>>>> 2dfb903bd53d84b5994fce863cbdfd151680b76c
             </ion-col>
             <ion-col col-12>
                 <movies-now-playing></movies-now-playing>
