@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MoviesNowPlayingComponent } from './movies-now-playing/movies-now-playing';
 import { MoviesTopRatedComponent } from './movies-top-rated/movies-top-rated';
 import { MoviesSearchComponent } from './movies-search/movies-search';
+import { MoviesAddedComponent } from './movies-added/movies-added';
 import { DuckflixHeaderComponent } from './duckflix-header/duckflix-header';
 
 @NgModule({
@@ -12,6 +13,7 @@ import { DuckflixHeaderComponent } from './duckflix-header/duckflix-header';
     MoviesNowPlayingComponent,
     MoviesTopRatedComponent,
     MoviesSearchComponent,
+    MoviesAddedComponent
     DuckflixHeaderComponent
   ],
   imports: [
@@ -21,6 +23,7 @@ import { DuckflixHeaderComponent } from './duckflix-header/duckflix-header';
     MoviesNowPlayingComponent,
     MoviesTopRatedComponent,
     MoviesSearchComponent,
+    MoviesAddedComponent
     DuckflixHeaderComponent
   ]
 })
