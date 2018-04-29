@@ -1,23 +1,23 @@
 <div>
-    <ion-grid>
-        <ion-row>
-            <ion-col col-12 text center>
-                <button ion-button icon-left small  (click)="paginatePrevious()" [class.custom-disabeled]="isFirstPage()">
-                    <ion-icon name="arrow-back"></ion-icon>
-                    Previous
-                </button>
-                <span>{{ pageNumber }}</span>
-                <button ion-button icon-right small  (click)="paginateNext()">
-                    Next
-                    <ion-icon name="arrow-forward"></ion-icon>
-                </button>
-            </ion-col>
-        </ion-row>
-    </ion-grid>
-    <ion-grid>
+    <!--<ion-grid>-->
+        <!--<ion-row>-->
+            <!--<ion-col col-12 text center>-->
+                <!--<button ion-button icon-left small  (click)="paginatePrevious()" [class.custom-disabeled]="isFirstPage()">-->
+                    <!--<ion-icon name="arrow-back"></ion-icon>-->
+                    <!--Previous-->
+                <!--</button>-->
+                <!--<span>{{ pageNumber }}</span>-->
+                <!--<button ion-button icon-right small  (click)="paginateNext()">-->
+                    <!--Next-->
+                    <!--<ion-icon name="arrow-forward"></ion-icon>-->
+                <!--</button>-->
+            <!--</ion-col>-->
+        <!--</ion-row>-->
+    <!--</ion-grid>-->
+    <ion-grid no-padding>
         <ion-row text-center>
-            <ion-col col-4 *ngFor="let movie of movies">
-                {{movie.id}}
+            <ion-col col-4 align-self-start *ngFor="let movie of movies" style="padding: 2px 4px">
+                <!--{{movie.id}}-->
                 <a href="#" (click)="openModal({movieId: movie.id})"><img src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/{{ movie.poster_path }}" alt=""></a>
             </ion-col>
         </ion-row>

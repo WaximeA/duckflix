@@ -1,15 +1,16 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>Home</ion-title>
-    <movies-search></movies-search>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>Home</ion-title>
+        <movies-search></movies-search>
+    </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content>
+    <duckflix-header></duckflix-header>
     <ion-grid>
         <ion-row text-center>
-            <ion-col col-12>
-                <h3>Welcome</h3>
+            <ion-col color="light" col-12>
+                <h3>Recommended for you</h3>
             </ion-col>
             <ion-col col-12>
                 <movies-now-playing></movies-now-playing>

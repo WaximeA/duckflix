@@ -1,3 +1,13 @@
 page-search-movie {
-
+  ion-searchbar.duckflix-search{
+    background: #B42025;
+    .searchbar-input::placeholder,
+    .searchbar-input{
+      background: lighten( #B42025, 15% );
+      color: #f4f4f4;
+    }
+    .searchbar-search-icon{
+      filter: invert(1);
+    }
+  }
 }
