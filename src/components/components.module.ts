@@ -5,12 +5,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { MoviesNowPlayingComponent } from './movies-now-playing/movies-now-playing';
 import { MoviesTopRatedComponent } from './movies-top-rated/movies-top-rated';
 import { MoviesSearchComponent } from './movies-search/movies-search';
+import { MoviesGetVideosComponent } from './movies-get-videos/movies-get-videos';
 
 @NgModule({
   declarations: [
     MoviesNowPlayingComponent,
     MoviesTopRatedComponent,
-    MoviesSearchComponent
+    MoviesSearchComponent,
+    MoviesGetVideosComponent
   ],
   imports: [
     IonicModule, HttpClientModule
@@ -18,7 +20,8 @@ import { MoviesSearchComponent } from './movies-search/movies-search';
   exports: [
     MoviesNowPlayingComponent,
     MoviesTopRatedComponent,
-    MoviesSearchComponent
+    MoviesSearchComponent,
+    MoviesGetVideosComponent
   ]
 })
 
