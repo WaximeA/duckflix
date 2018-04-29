@@ -13,7 +13,7 @@ import { DuckflixHeaderComponent } from './duckflix-header/duckflix-header';
     MoviesNowPlayingComponent,
     MoviesTopRatedComponent,
     MoviesSearchComponent,
-    MoviesAddedComponent
+    MoviesAddedComponent,
     DuckflixHeaderComponent
   ],
   imports: [
@@ -23,7 +23,7 @@ import { DuckflixHeaderComponent } from './duckflix-header/duckflix-header';
     MoviesNowPlayingComponent,
     MoviesTopRatedComponent,
     MoviesSearchComponent,
-    MoviesAddedComponent
+    MoviesAddedComponent,
     DuckflixHeaderComponent
   ]
 })
