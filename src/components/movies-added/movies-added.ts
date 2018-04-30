@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Storage } from "@ionic/storage";
-import { LoadingController, ModalController } from "ionic-angular";
+import { LoadingController, ModalController, PopoverController } from "ionic-angular";
 import { ShowVideoPage } from "../../pages/show-video/show-video";
 
 const apiUrl='https://api.themoviedb.org';
@@ -51,6 +51,11 @@ export class MoviesAddedComponent {
   //   console.log('toto2');
   // }
 
+  removeMovie(movieId){
+    let movieIndex = this.addedMovies.indexOf(movieId);
+    this.addedMovies.splice(movieIndex, movieIndex+1);
+    this.storage.set('addedMoviesStorage', this.addedMovies);
+  }
 
   prensentLoader(){
     let loader = this.loadingCtrl.create({
