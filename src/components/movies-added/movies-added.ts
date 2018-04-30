@@ -29,6 +29,29 @@ export class MoviesAddedComponent {
     });
   }
 
+  updateWatch(){
+    this.prensentLoader();
+    this.storage.get('addedMoviesStorage').then((val) => {
+      this.addedMovies = val;
+      this.movies = [];
+      this.getAllData();
+    });
+  }
+
+  // ngAfterContentInit(){
+  //   // this.prensentLoader();
+  //   // this.storage.get('addedMoviesStorage').then((val) => {
+  //   //   this.addedMovies = val;
+  //   //   this.getAllData();
+  //   // });
+  //   console.log('toto');
+  // }
+  //
+  // ngAfterContentChecked(){
+  //   console.log('toto2');
+  // }
+
+
   prensentLoader(){
     let loader = this.loadingCtrl.create({
       content: "Please wait...",
