@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Storage } from "@ionic/storage";
-import { LoadingController, ModalController, PopoverController } from "ionic-angular";
+import { LoadingController, ModalController, NavController } from "ionic-angular";
 import { ShowVideoPage } from "../../pages/show-video/show-video";
+import { TabsPage } from "../../pages/tabs/tabs";
+import { WatchPage } from "../../pages/watch/watch";
 
 const apiUrl='https://api.themoviedb.org';
 
@@ -21,7 +23,7 @@ export class MoviesAddedComponent {
   addedMovies: any = [];
   movies: any = [];
 
-  constructor(private http: HttpClient, public storage: Storage, public modalCtrl: ModalController, public loadingCtrl: LoadingController) {
+  constructor(private http: HttpClient, public storage: Storage, public modalCtrl: ModalController, public loadingCtrl: LoadingController, public navCtrl: NavController) {
     this.prensentLoader();
     this.storage.get('addedMoviesStorage').then((val) => {
       this.addedMovies = val;
@@ -55,6 +57,7 @@ export class MoviesAddedComponent {
     let movieIndex = this.addedMovies.indexOf(movieId);
     this.addedMovies.splice(movieIndex, movieIndex+1);
     this.storage.set('addedMoviesStorage', this.addedMovies);
+    this.navCtrl.push(WatchPage, TabsPage);
   }
 
   prensentLoader(){
