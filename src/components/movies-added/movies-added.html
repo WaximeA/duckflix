@@ -3,7 +3,7 @@
         <button ion-button outline (click)="updateWatch()">UDPATE</button>
         <ion-row text-center>
             <ion-col col-4 *ngFor="let movie of movies">
-                <a href="#" (click)="doConfirm()"><img src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/{{ movie.poster_path }}" alt=""></a>
+                <a href="#"><img src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/{{ movie.poster_path }}" alt=""></a>
                 <button ion-button small (click)="openModal({movieId: movie.id})">
                 <ion-icon name="videocam"></ion-icon>
                 </button>
