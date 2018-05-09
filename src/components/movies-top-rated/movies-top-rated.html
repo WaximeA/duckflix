@@ -1,19 +1,4 @@
 <div>
-    <!--<ion-grid>-->
-        <!--<ion-row>-->
-            <!--<ion-col col-12 text center>-->
-                <!--<button ion-button icon-left small  (click)="paginatePrevious()" [class.custom-disabeled]="isFirstPage()">-->
-                    <!--<ion-icon name="arrow-back"></ion-icon>-->
-                    <!--Previous-->
-                <!--</button>-->
-                <!--<span>{{ pageNumber }}</span>-->
-                <!--<button ion-button icon-right small  (click)="paginateNext()">-->
-                    <!--Next-->
-                    <!--<ion-icon name="arrow-forward"></ion-icon>-->
-                <!--</button>-->
-            <!--</ion-col>-->
-        <!--</ion-row>-->
-    <!--</ion-grid>-->
     <ion-grid no-padding>
         <ion-row text-center>
             <ion-col col-4 *ngFor="let movie of movies" style="padding: 2px 4px">
@@ -29,7 +14,7 @@
                     <ion-icon name="arrow-back"></ion-icon>
                     Previous
                 </button>
-                <span>{{ pageNumber }}</span>
+                <ion-badge> {{ pageNumber }} </ion-badge>
                 <button ion-button icon-right small  (click)="paginateNext()">
                     Next
                     <ion-icon name="arrow-forward"></ion-icon>

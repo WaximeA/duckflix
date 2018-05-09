@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { ModalController } from 'ionic-angular';
+import { Content, ModalController } from 'ionic-angular';
 import { ShowMoviePage } from '../../pages/show-movie/show-movie';
 
 const apiUrl='https://api.themoviedb.org';
@@ -21,7 +21,7 @@ export class MoviesTopRatedComponent {
   number: any = 1;
   movies: any = [];
 
-  constructor(private http: HttpClient, public modalCtrl: ModalController) {
+  constructor(private http: HttpClient, public modalCtrl: ModalController, public content: Content) {
     // Get content with Http Get request
     this.fetchAPI();
     this.pageNumber = this.number;
@@ -31,14 +31,16 @@ export class MoviesTopRatedComponent {
     if  (this.number > 1){
       this.number = this.number-1;
       this.pageNumber = this.number;
-      this.fetchAPI()
+      this.fetchAPI();
+      this.content.scrollToTop(400);
     }
   }
 
   paginateNext() {
     this.number = this.number+1;
     this.pageNumber = this.number;
-    this.fetchAPI()
+    this.fetchAPI();
+    this.content.scrollToTop(400);
   }
 
   isFirstPage(){

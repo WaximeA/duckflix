@@ -10,7 +10,7 @@ import { LoginPage } from '../pages/login/login';
 import { HomePage } from '../pages/home/home';
 import { TopPage } from '../pages/top/top';
 import { WatchPage } from '../pages/watch/watch';
-import { ProfilePage } from '../pages/profile/profile';
+import { SettingsPage } from '../pages/settings/settings';
 import { ShowMoviePage } from '../pages/show-movie/show-movie';
 import { ShowVideoPage } from '../pages/show-video/show-video';
 import { SearchMoviePage } from '../pages/search-movie/search-movie';
@@ -30,7 +30,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePage,
     TopPage,
     WatchPage,
-    ProfilePage,
+    SettingsPage,
     ShowMoviePage,
     ShowVideoPage,
     SearchMoviePage,
@@ -54,7 +54,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePage,
     TopPage,
     WatchPage,
-    ProfilePage,
+    SettingsPage,
     ShowMoviePage,
     ShowVideoPage,
     SearchMoviePage,
