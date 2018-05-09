@@ -1,6 +1,6 @@
 <div>
-    <button ion-button full (click)="updateWatch()">UDPATE</button>
     <ion-grid>
+        <button ion-button outline (click)="updateWatch()">UDPATE</button>
         <ion-row text-center>
             <ion-col col-4 *ngFor="let movie of movies">
                 <a href="#" (click)="doConfirm()"><img src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/{{ movie.poster_path }}" alt=""></a>
