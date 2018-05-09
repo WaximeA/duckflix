@@ -1,10 +1,15 @@
 <div>
-    <button (click)="updateWatch()">UDPATE</button>
+    <button ion-button full (click)="updateWatch()">UDPATE</button>
     <ion-grid>
         <ion-row text-center>
             <ion-col col-4 *ngFor="let movie of movies">
-                <a href="#" (click)="openModal({movieId: movie.id})"><img src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/{{ movie.poster_path }}" alt=""></a>
-                <a href="#" (click)="removeMovie(movie.id)">delete</a>
+                <a href="#" (click)="doConfirm()"><img src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/{{ movie.poster_path }}" alt=""></a>
+                <button ion-button small (click)="openModal({movieId: movie.id})">
+                <ion-icon name="videocam"></ion-icon>
+                </button>
+                <button ion-button small (click)="removeMovie(movie.id)">
+                <ion-icon name="trash"></ion-icon>
+                </button>
             </ion-col>
         </ion-row>
     </ion-grid>
