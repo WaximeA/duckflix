@@ -8,11 +8,13 @@
 
   <ion-navbar>
     <ion-title>Watch</ion-title>
+    <movies-search></movies-search>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding [ngStyle]="{'color':'white'}">
-    <movies-added></movies-added>
+<ion-content [ngStyle]="{'color':'white'}">
+    <duckflix-header></duckflix-header>
+    <movies-added padding></movies-added>
 </ion-content>
