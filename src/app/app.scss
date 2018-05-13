@@ -27,15 +27,25 @@
 }
 
 .content-ios {
-    background: #0a0a0a;
+  background: #0a0a0a;
+}
+
+.content-md {
+  background: #0a0a0a;
 }
 
 .toolbar-title-ios {
-    color: #fff;
+  color: #fff;
 }
+
 .tabs-ios .tabbar,
+.tabs-md .tabbar,
 ion-navbar, ion-header .toolbar-background {
-    background: #1c1c1c;
+  background: #1c1c1c;
+}
+.tabs-md .tab-button, 
+.tabs-md .tab-button-icon {
+  color: rgba(160, 160, 160, 0.7);
 }
 
 .custom-disabeled {
